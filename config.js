@@ -52,7 +52,7 @@ window.QSORT_CONFIG = {
 
   // Forced distribution
   scale: [4,3,2,1,0,-1,-2,-3,-4],
-  slots: {"4":2,"3":4,"2":6,"1":8,"0":10,"-1":8,"-2":6,"-3":4,"-4":2},
+  slots: {"4":2,"3":3,"2":5,"1":6,"0":8,"-1":6,"-2":5,"-3":3,"-4":2},
 
   // Statements (keep your 40 from v1; paste yours here)
   statements: [
