@@ -1,0 +1,56 @@
+*{box-sizing:border-box}
+body{font-family:system-ui,Segoe UI,Arial,sans-serif;margin:0;background:#f7f7fb;color:#222}
+header{padding:18px 22px;background:#2b579a;color:white}
+header h1{margin:0 0 6px 0;font-size:22px}
+header p{margin:0;opacity:.95}
+
+.meta{display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding:12px 22px;background:#fff;border-bottom:1px solid #e6e6ee;justify-content:space-between}
+.pidbox{display:flex;flex-direction:column;gap:2px}
+.hint{font-size:12px;color:#666}
+.meta button{padding:8px 12px;border:0;border-radius:6px;background:#0f6cbd;color:#fff;cursor:pointer}
+.meta button:hover{background:#115ea3}
+
+main{padding:16px 22px}
+.panel{background:#fff;border:1px solid #e6e6ee;border-radius:10px;padding:12px}
+.panel.hidden{display:none}
+
+.helpbox{background:#f1f3ff;border:1px solid #d9d9e8;border-radius:10px;padding:10px;margin:10px 0}
+.linkrow{display:flex;gap:14px;flex-wrap:wrap;margin:10px 0}
+.linkrow a{color:#0f6cbd;text-decoration:none}
+.linkrow a:hover{text-decoration:underline}
+.ethicsline{margin:8px 0;color:#333}
+.checkline{display:flex;gap:10px;align-items:flex-start;margin:10px 0}
+
+.threecol{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+@media(max-width:980px){.threecol{grid-template-columns:1fr}}
+
+.pile{border:1px solid #d9d9e8;border-radius:10px;display:flex;flex-direction:column;min-height:240px}
+.pilehead{padding:10px;background:#f1f3ff;border-bottom:1px solid #d9d9e8;border-radius:10px 10px 0 0;font-weight:700}
+
+.bank{margin-top:12px}
+.bank h3{margin:6px 0 8px 0}
+
+.dropzone{min-height:160px;border:2px dashed #cfd2e6;border-radius:10px;padding:10px;display:flex;flex-direction:column;gap:8px;overflow:auto}
+.card{background:#fdfdfd;border:1px solid #d9d9e8;border-radius:10px;padding:10px;cursor:grab}
+.card:active{cursor:grabbing}
+.card .num{font-weight:700;color:#2b579a;margin-right:8px}
+
+.actions{margin-top:12px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.actions button{padding:8px 12px;border:0;border-radius:6px;background:#0f6cbd;color:#fff;cursor:pointer}
+.actions button:hover{background:#115ea3}
+.actions button[disabled]{background:#9bb8d3;cursor:not-allowed}
+.status{margin:0;font-size:13px;color:#333}
+
+.gridwrap{display:grid;grid-template-columns:repeat(9,1fr);gap:8px}
+.column{border:1px solid #d9d9e8;border-radius:10px;min-height:260px;display:flex;flex-direction:column}
+.colhead{padding:8px 10px;background:#f1f3ff;border-bottom:1px solid #d9d9e8;border-radius:10px 10px 0 0;font-weight:700;font-size:13px;display:flex;justify-content:space-between}
+.slotinfo{font-weight:600;color:#444}
+.colbody{padding:10px;display:flex;flex-direction:column;gap:8px;flex:1}
+
+.help{margin:10px 0}
+.small{padding:10px 22px;color:#666;font-size:12px}
+
+.qitem{margin:12px 0}
+.qitem textarea{width:100%;padding:8px;border:1px solid #d9d9e8;border-radius:8px}
+.anchors{display:flex;justify-content:space-between;font-size:12px;color:#666;margin-top:4px}
+

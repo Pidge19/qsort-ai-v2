@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Q-sort v2</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1 id="title">Q-sort</h1>
+    <p id="instructions"></p>
+  </header>
+
+  <section class="meta">
+    <div class="pidbox">
+      <div><b>Participant ID:</b> <span id="pidDisplay"></span></div>
+      <div class="hint" id="pidHint"></div>
+    </div>
+    <button id="btnRandomize" type="button">Randomize statement order</button>
+  </section>
+
+  <main>
+    <!-- Panel 0: Consent -->
+    <section id="consent" class="panel">
+      <h2>Participant information and consent</h2>
+
+      <div class="helpbox" id="researchBlurb"></div>
+
+      <div class="linkrow">
+        <a id="infoPdfLink" href="#" target="_blank" rel="noopener">Download Participant Information Sheet (PDF)</a>
+        <a id="infoWebLink" href="#" target="_blank" rel="noopener">View Participant Information Sheet (web)</a>
+      </div>
+
+      <div class="ethicsline">
+        <b>Ethics approval:</b> <span id="ethicsRef"></span>
+      </div>
+
+      <label class="checkline">
+        <input type="checkbox" id="chkConsent" />
+        I have read the information above and I consent to participate in this research.
+      </label>
+
+      <div class="actions">
+        <button id="btnConsentContinue" type="button" disabled>Proceed</button>
+        <p id="status0" class="status"></p>
+      </div>
+    </section>
+
+    <!-- Panel 1: Pre-sort -->
+    <section id="presort" class="panel hidden">
+      <h2>Before you start</h2>
+      <p class="hint">These questions are optional. You may skip any question.</p>
+      <div id="presortForm"></div>
+      <div class="actions">
+        <button id="btnPreSortContinue" type="button">Continue</button>
+      </div>
+    </section>
+
+    <!-- Panel 2: Step 1 -->
+    <section id="step1" class="panel hidden">
+      <h2>Step 1 (optional): Sort into three piles</h2>
+      <p class="hint">
+        Start by dragging statements that are <b>most like your view</b> into “Most like my view”
+        and statements that are <b>least like your view</b> into “Least like my view”.
+        You may also place statements into “Neutral”. Any statements left in the bank are treated as neutral.
+      </p>
+
+      <details class="help">
+        <summary>Help</summary>
+        <ul>
+          <li>Drag statement cards from the bank into a pile.</li>
+          <li>This step is optional. You can go straight to the grid.</li>
+          <li>You can move cards anytime.</li>
+        </ul>
+      </details>
+
+      <section class="bank">
+        <h3>Statement bank</h3>
+        <div id="bankStep1" class="dropzone"></div>
+      </section>
+
+      <div class="threecol">
+        <div class="pile">
+          <div class="pilehead">Most like my view</div>
+          <div id="pileLike" class="dropzone"></div>
+        </div>
+        <div class="pile">
+          <div class="pilehead">Neutral</div>
+          <div id="pileNeutral" class="dropzone"></div>
+        </div>
+        <div class="pile">
+          <div class="pilehead">Least like my view</div>
+          <div id="pileUnlike" class="dropzone"></div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="btnSkipToGrid" type="button">Skip to grid</button>
+        <button id="btnToStep2" type="button">Continue to grid</button>
+        <p id="status1" class="status"></p>
+      </div>
+    </section>
+
+    <!-- Panel 3: Step 2 -->
+    <section id="step2" class="panel hidden">
+      <h2>Step 2: Place statements on the forced grid (+4 to −4)</h2>
+      <p class="hint">
+        Tip: Start with the extremes (+4 and −4), then fill inward. Each column has a fixed number of slots.
+        You can move statements anytime.
+      </p>
+
+      <details class="help">
+        <summary>Help</summary>
+        <ul>
+          <li>Drag cards from “Unplaced” into a grid column.</li>
+          <li>If a column is full, move a card out first.</li>
+          <li>When the grid is complete, you will be taken to a short reflection page.</li>
+        </ul>
+      </details>
+
+      <section class="bank">
+        <h3>Unplaced</h3>
+        <div id="bank" class="dropzone"></div>
+      </section>
+
+      <section class="grid">
+        <div id="grid" class="gridwrap"></div>
+        <div class="actions">
+          <button id="btnValidate" type="button">Continue to reflections</button>
+          <button id="btnExport" type="button" disabled>Export (KADE CSV + JSON)</button>
+          <p id="status2" class="status"></p>
+        </div>
+      </section>
+    </section>
+
+    <!-- Panel 4: Post-sort reflections -->
+    <section id="postsort" class="panel hidden">
+      <h2>After the sort</h2>
+      <p class="hint">
+        Optional: Tell us about the statements you placed at the extremes. This helps interpret the Q-sort.
+      </p>
+
+      <div id="extremesWrap"></div>
+
+      <div class="qitem">
+        <div><b>Is there anything else you would like to say?</b></div>
+        <textarea id="finalComment" rows="4" placeholder="Optional"></textarea>
+      </div>
+
+      <div class="qitem">
+        <div><b>How confident are you that this Q-sort reflects your views today?</b></div>
+        <input id="confidence" type="range" min="1" max="6" value="3" />
+        <div class="anchors"><span>Not confident</span><span>Very confident</span></div>
+      </div>
+
+      <div class="actions">
+        <button id="btnSubmit" type="button">Submit</button>
+        <p id="status3" class="status"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p class="small">Data stays in your browser until you Export or Submit.</p>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
+
